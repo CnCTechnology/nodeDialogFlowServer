@@ -1,3 +1,4 @@
+
 // call the packages we need
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
@@ -17,6 +18,10 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });   
 });
 
+router.post('/webhook',function(req,res){
+    console.log(req);
+    res.json({ message:'Chat api'});       
+});
 
 // all of our routes will be prefixed with /api
 app.use('/api', router);
