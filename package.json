@@ -1,0 +1,32 @@
+{
+  "name": "node_webhook",
+  "version": "1.0.0",
+  "description": "this is node server for the purpose of webhook, which will be linked with dialogflow console.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "~4.0.0",
+    "body-parser": "~1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CnCTechnology/nodeDialogFlowServer.git"
+  },
+  "keywords": [
+    "[node",
+    "node",
+    "server",
+    "webhook",
+    "node",
+    "server",
+    "dialogflow]"
+  ],
+  "author": "shekhar kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CnCTechnology/nodeDialogFlowServer/issues"
+  },
+  "homepage": "https://github.com/CnCTechnology/nodeDialogFlowServer#readme"
+}
