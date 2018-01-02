@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/webhook',function(req, res){
-    console.log(req);
+    console.log(req.body.result);
     var speech="This is just the test"
     var chatResult={
         speech: speech,
