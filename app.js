@@ -18,9 +18,15 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });   
 });
 
-router.post('/webhook',function(req,res){
+router.post('/webhook',function(req, res){
     console.log(req);
-    res.json({ message:'Chat api'});       
+    var speech="This is just the test"
+    var chatResult={
+        speech: speech,
+        displayText: speech,        
+        source: "apiai-test-webhook-node"
+    }
+    res.json(chatResult);       
 });
 
 // all of our routes will be prefixed with /api
