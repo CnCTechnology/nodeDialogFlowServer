@@ -21,7 +21,8 @@ router.get('/', function(req, res) {
 
 router.post('/webhook',function(req, res){
     console.log(req.body.result);
-    return intentRequest.process(req,res); 
+    var response= intentRequest.process(req,res); 
+    res.json(response);
 });
 
 // all of our routes will be prefixed with /api
