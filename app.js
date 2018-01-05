@@ -19,8 +19,7 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });   
 });
 
-router.post('/webhook',function(req, res){
-    console.log(req.body.result);
+router.post('/webhook',function(req, res){    
     var response= intentRequest.process(req,res); 
     res.json(response);
 });
