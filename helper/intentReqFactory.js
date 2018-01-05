@@ -10,8 +10,7 @@ var intentRequestManager = {
 
     process: function (req, res) {
         console.log(req.body.result);
-        var actionName = req.body.result.action;
-        console.log(actionName);
+        var actionName = req.body.result.action;        
         var speech = "";
         switch (actionName) {
             case "t001":
