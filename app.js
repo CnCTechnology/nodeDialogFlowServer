@@ -3,6 +3,7 @@
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
+var intentRequest=require('./helper/intentReqFactory');
 
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,13 +21,7 @@ router.get('/', function(req, res) {
 
 router.post('/webhook',function(req, res){
     console.log(req.body.result);
-    var speech="This is just the test"
-    var chatResult={
-        speech: speech,
-        displayText: speech,        
-        source: "apiai-test-webhook-node"
-    }
-    res.json(chatResult);       
+    return intentRequest.process(req,res); 
 });
 
 // all of our routes will be prefixed with /api
