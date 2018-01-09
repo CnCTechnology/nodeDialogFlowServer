@@ -7,7 +7,7 @@ var menuData = menuDataRecord.getData();
 
 var queryData = {
     getMenuItem: function (menuItem) {
-        var result = jsonQuery('MenuItems[**][*MenuItem=menuItem]',{data:data}).value;
+        var result = jsonQuery('MenuItems[**][*MenuItem=menuItem]',{data:menuData}).value;
         return result;
     }
 
