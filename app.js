@@ -30,8 +30,7 @@ router.post('/apiai', function (req, res) {
         res.send(result.fulfillment.speech);
     }, function (error) {
         console.log(error);
-    });
-    res.json(response);
+    });    
 });
 
 router.post('/webhook', function (req, res) {
