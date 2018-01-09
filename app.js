@@ -21,11 +21,12 @@ router.get('/', function (req, res) {
 });
 
 router.post('/apiai', function (req, res) {
-    var response = apiaiRequest.process(req, function (result) {        
+    var response = apiaiRequest.process(req, function (result) {
+        var speechReturned = result.fulfillment.speech;
         res.send(result.fulfillment);
     }, function (error) {
         console.log(error);
-    });    
+    });
 });
 
 router.post('/webhook', function (req, res) {
