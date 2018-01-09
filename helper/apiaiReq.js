@@ -12,12 +12,12 @@ var getSessionId = function () {
 
 
 var apiaiRequest = {
-    process: function (req, cb_result, cb_error) {        
+    process: function (req, cb_result, cb_error) {
         var request = apiApp.textRequest(req.body.textMessage, {
             sessionId: getSessionId()
         });
 
-        request.on('response', function (response) {            
+        request.on('response', function (response) {
             return cb_result(response.result);
         });
 
