@@ -5,7 +5,7 @@ var app = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var intentRequest = require('./helper/intentReqFactory');
 var apiaiRequest = require('./helper/apiaiReq');
-var queryHelper=require('./helper/menuDataQueryManager');
+//var queryHelper = require('./helper/menuDataQueryManager');
 
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,9 +25,7 @@ router.post('/apiai', function (req, res) {
     var response = apiaiRequest.process(req, function (result) {
         var speechReturned = JSON.parse(result.fulfillment.speech);
         console.log('log the speech');
-       console.log(queryHelper.getMenuItem("Pepperoni Cheesy Bread"));
-
-
+        // console.log(queryHelper.getMenuItem("Pepperoni Cheesy Bread"));
         res.send(result.fulfillment);
     }, function (error) {
         console.log(error);
