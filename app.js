@@ -23,6 +23,8 @@ router.get('/', function (req, res) {
 router.post('/apiai', function (req, res) {
     var response = apiaiRequest.process(req, function (result) {
         var speechReturned = result.fulfillment.speech;
+        console.log('log the speech');
+        console.log(JSON.parse(speechReturned));
         res.send(result.fulfillment);
     }, function (error) {
         console.log(error);
