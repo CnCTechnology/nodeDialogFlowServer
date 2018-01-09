@@ -296,10 +296,10 @@ var menuData = [{
 }
 ];
 
-var menuDataExport={
-        getData:function(){
-            return menuData[0];
-        }
+var menuDataExport = {
+    getData: function () {
+        return menuData[0];
+    }
 }
 
 module.exports = menuDataExport; 

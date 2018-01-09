@@ -1,21 +1,22 @@
-var menuQueryManager = require('./menuDataQueryManager');
 
 var intentsResolver = {
     t001: function (req) {
-
         var params = req.body.result.parameters;
-        var itemName = params['item'];
-        var menuItem = menuQueryManager.getMenuItem(itemName);
-        console.log('menu order query');
-        console.log(menuItem);
+
+        var item1Object = {
+            quantity: params['number-integer'],
+            item: params['item'],
+            options_item: params['option']
+        }
+
+        var item2Object = {
+            quantity: params['number-integer1'],
+            item: params['item1'],
+            options_item: params['option1']
+        }
 
         var returnObject = {
-            item1_quantity: params['number-integer'],
-            item1: params['item'],
-            item1_Options: params['option'],
-            item2_quantity: params['number-integer1'],
-            item2: params['item1'],
-            item2_Options: params['option1'],
+            items:[item1Object,item2Object],
             pickupOrDelivery: params['Delivery-Pickup-Entity'],
             address: params['address'],
             paymentMode: params['paymentMode-Entity']
@@ -24,10 +25,13 @@ var intentsResolver = {
     },
     t002: function (req) {
         var params = req.body.result.parameters;
+        var item1Object = {
+            quantity: params['number-integer'],
+            item: params['item'],
+            options_item: params['option']
+        }
         var returnObject = {
-            item1_quantity: params['number-integer'],
-            item1: params['item'],
-            item1_Options: params['option'],
+            items:[item1Object],
             pickupOrDelivery: params['Delivery-Pickup-Entity'],
             address: params['address'],
             paymentMode: params['paymentMode-Entity']
