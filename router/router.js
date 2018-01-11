@@ -1,9 +1,9 @@
-
-var express = require('express');        // call express
+var express = require('express');
 
 var webhookManager = require('../services/webHook');
-var botServiceManager=require('../services/botService');
-var queryService=require('../services/queryService');
+var botServiceManager = require('../services/botService');
+var queryService = require('../services/queryService');
+var textrestaurantApiServices = require('../services/textRestaurantApiService');
 
 var routerExport = {
     route: function () {
@@ -18,6 +18,8 @@ var routerExport = {
 
         router.post('/TestJSONQuery', queryService.getMenuItem);
         router.post('/TestJSONQuery/options', queryService.getOptionDetails);
+
+        router.get('/textrestaurant/token', textrestaurantApiServices.getTextrestaurantToken);
 
         return router;
     }
