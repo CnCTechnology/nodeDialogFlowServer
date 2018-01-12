@@ -18,6 +18,8 @@ var apiaiRequest = {
         });
 
         request.on('response', function (response) {
+            console.log(response);
+            
             return cb_result(response.result);
         });
 
