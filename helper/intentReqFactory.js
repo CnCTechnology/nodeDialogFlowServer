@@ -9,7 +9,6 @@ var intentManager = require('./intentFactory');
 var intentRequestManager = {
 
     process: function (req, res) {
-        console.log(req.body.result);
         var actionName = req.body.result.action;        
         var speech = "";
         switch (actionName) {
