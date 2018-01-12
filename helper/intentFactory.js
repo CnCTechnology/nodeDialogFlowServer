@@ -22,13 +22,9 @@ var intentsResolver = {
             pickupOrDelivery: params['Delivery-Pickup-Entity'],
             address: params['address'],
             paymentMode: params['paymentMode-Entity']
-        }
-
-        // if(req.body.result.fulfillment.speech=="retry"){
-
-        // }
-        var formattedObject = speechDataFormatCleaner.clean(JSON.stringify(returnObject));
-        return formattedObject;
+        }        
+        var formattedObject = speechDataFormatCleaner.clean(returnObject);
+        return JSON.stringify(formattedObject);
     },
     t002: function (req) {
         var params = req.body.result.parameters;
