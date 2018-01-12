@@ -23,6 +23,10 @@ var intentsResolver = {
             address: params['address'],
             paymentMode: params['paymentMode-Entity']
         }
+
+        // if(req.body.result.fulfillment.speech=="retry"){
+
+        // }
         var formattedObject = speechDataFormatCleaner.clean(JSON.stringify(returnObject));
         return formattedObject;
     },

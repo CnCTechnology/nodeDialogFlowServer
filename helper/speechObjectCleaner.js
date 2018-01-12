@@ -1,23 +1,35 @@
 
 var resolveArraySoloString = function (data) {
-    if (Array.isArray(data)) {
-        return String(data[0]);
+    if(data){
+        if (Array.isArray(data)) {
+            return String(data[0]);
+        }
+        else {
+            return String(data);
+        }
     }
-    else {
-        return String(data);
+    else{
+        return data;
     }
+    
 };
 
 var resolveItems = function (items) {
-    var itemsCleaned = [];
-    for (var i = 0; i < items.length; i++) {
-        itemsCleaned.push({
-            quantity: resolveArraySoloString(items[i].quantity),
-            item: resolveArraySoloString(items[i].item),
-            options_item: items[i].options_item
-        });
+    if(items){
+        var itemsCleaned = [];
+        for (var i = 0; i < items.length; i++) {
+            itemsCleaned.push({
+                quantity: resolveArraySoloString(items[i].quantity),
+                item: resolveArraySoloString(items[i].item),
+                options_item: items[i].options_item
+            });
+        }
+        return itemsCleaned;
     }
-    return itemsCleaned;
+    else{
+        return items;
+    }
+    
 };
 
 var refineTheReturn = function (speechObject) {
