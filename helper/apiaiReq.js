@@ -18,8 +18,11 @@ var apiaiRequest = {
         });
 
         request.on('response', function (response) {
+            console.log('--------------- response debug -----------------');
             console.log(response);
+            console.log('--------------- response end -----------------');
             
+
             return cb_result(response.result);
         });
 
