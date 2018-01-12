@@ -10,7 +10,9 @@
     "apiai": "^4.0.3",
     "body-parser": "~1.0.1",
     "express": "~4.0.0",
-    "json-query": "^2.2.2"
+    "json-query": "^2.2.2",
+    "jwt-decode": "^2.2.0",
+    "node-cache": "^4.1.1"
   },
   "repository": {
     "type": "git",

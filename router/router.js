@@ -20,6 +20,7 @@ var routerExport = {
         router.post('/TestJSONQuery/options', queryService.getOptionDetails);
 
         router.get('/textrestaurant/token', textrestaurantApiServices.getTextrestaurantToken);
+        router.get('/textrestaurant/menu', textrestaurantApiServices.getMenuItem);
 
         return router;
     }
