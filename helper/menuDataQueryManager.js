@@ -33,7 +33,6 @@ var getOptionForSelectedObject = function (option, menuItemsObject, cb_option) {
         }
     }
     return cb_option(menuItemOptionResult);
-
 }
 
 var queryData = {
