@@ -1,4 +1,6 @@
 
+var speechDataFormatCleaner = require('./speechObjectCleaner');
+
 var intentsResolver = {
     t001: function (req) {
         var params = req.body.result.parameters;
@@ -16,12 +18,13 @@ var intentsResolver = {
         }
 
         var returnObject = {
-            items:[item1Object,item2Object],
+            items: [item1Object, item2Object],
             pickupOrDelivery: params['Delivery-Pickup-Entity'],
             address: params['address'],
             paymentMode: params['paymentMode-Entity']
         }
-        return JSON.stringify(returnObject);
+        var formattedObject = speechDataFormatCleaner.clean(JSON.stringify(returnObject));
+        return formattedObject;
     },
     t002: function (req) {
         var params = req.body.result.parameters;
@@ -31,12 +34,13 @@ var intentsResolver = {
             options_item: params['option']
         }
         var returnObject = {
-            items:[item1Object],
+            items: [item1Object],
             pickupOrDelivery: params['Delivery-Pickup-Entity'],
             address: params['address'],
             paymentMode: params['paymentMode-Entity']
         }
-        return JSON.stringify(returnObject);
+        var formattedObject = speechDataFormatCleaner.clean(JSON.stringify(returnObject));
+        return formattedObject;
     },
     t003: function (req) {
 
